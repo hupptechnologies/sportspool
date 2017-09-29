@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "501669867109",
+    "firebase_url": "https://the-sports-pool-156821.firebaseio.com",
+    "project_id": "the-sports-pool-156821",
+    "storage_bucket": "the-sports-pool-156821.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501669867109:android:3301d05bb96b99a3",
+        "android_client_info": {
+          "package_name": "com.thesportspool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501669867109-eti26q5q7f8hu4v6h11ej7dp2m9q2j5t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTLuU1KtcmvmrD4zsuRlDiOEBes0o3zUQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

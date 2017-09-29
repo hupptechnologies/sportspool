@@ -1,0 +1,92 @@
+<manifest
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.thesportspool"
+    android:versionCode="1"
+    android:versionName="1.0">
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<permission
+            android:name="com.thesportspool.permission.C2D_MESSAGE"
+            android:protectionLevel="signature" />
+	<uses-permission android:name="com.thesportspool.permission.C2D_MESSAGE" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+	<uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="22" />
+	<application
+      android:name=".MainApplication"
+      android:allowBackup="true"
+      android:label="@string/app_name"
+      android:icon="@mipmap/ic_launcher"
+      android:theme="@style/AppTheme">
+		<activity
+        android:name=".MainActivity"
+        android:label="@string/app_name"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+        android:launchMode="singleTask"
+        >
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+      <!-- Branch URI scheme -->
+      <intent-filter>
+        <data android:scheme="thesportspool" android:host="open" />
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+      </intent-filter>
+			<!-- AppLink example -->
+			<intent-filter android:autoVerify="true">
+			    <action android:name="android.intent.action.VIEW" />
+			    <category android:name="android.intent.category.DEFAULT" />
+			    <category android:name="android.intent.category.BROWSABLE" />
+			    <data android:scheme="https" android:host="thesportspool.app.link" />
+			</intent-filter>
+		</activity>
+
+
+
+    <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+
+    <!-- Branch init -->
+    <meta-data android:name="io.branch.sdk.BranchKey" android:value="key_live_jevak0R7y4V9ZHMScWIKLhaeqyhkGYi6" />
+    <meta-data android:name="io.branch.sdk.BranchKey.test" android:value="key_test_inwlf3TYqYIZWHURj2QQ0pjdAvelMXAm" />
+
+    <!-- Branch testing (TestMode "true" to simulate fresh installs) -->
+    <!-- <meta-data android:name="io.branch.sdk.TestMode" android:value="false" /> -->
+
+    <!-- Branch install referrer tracking -->
+    <receiver android:name="io.branch.referral.InstallListener" android:exported="true">
+        <intent-filter>
+          <action android:name="com.android.vending.INSTALL_REFERRER" />
+        </intent-filter>
+    </receiver>
+
+		<receiver
+      android:name="com.google.android.gms.gcm.GcmReceiver"
+      android:exported="true"
+      android:permission="com.google.android.c2dm.permission.SEND">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+				<category android:name="com.thesportspool" />
+			</intent-filter>
+		</receiver>
+		<receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationPublisher" />
+		<receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationBootEventReceiver">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+			</intent-filter>
+		</receiver>
+		<service android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationRegistrationService"/>
+		<service
+      android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationListenerService"
+      android:exported="false">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+			</intent-filter>
+		</service>
+	</application>
+</manifest>

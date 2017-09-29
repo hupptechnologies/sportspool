@@ -1,0 +1,5 @@
+<resources>
+    <string moduleConfig="true" name="reactNativeInstabug_androidApplicationToken"></string>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">OjPq8NnRCKjyNptaAKEm_WH5q6hv4yAw9NvFM</string>
+    <string name="app_name">thesportspool</string>
+</resources>
